@@ -8,8 +8,6 @@ import {
 
 @Entity('products')
 export class Products {
-  constructor() {}
-
   @PrimaryGeneratedColumn('uuid')
   uuid: string;
 
@@ -21,6 +19,9 @@ export class Products {
 
   @Column({ type: 'int' })
   quantity: number;
+
+  @Column({ type: 'simple-json', default: {} })
+  nutritionalTable: string;
 
   @CreateDateColumn()
   createdAt: Date;
