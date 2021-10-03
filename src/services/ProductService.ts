@@ -1,8 +1,8 @@
-import { AppError } from '@shared/errors/AppError';
-import { IRequestSaveProduct } from '@modules/interfaces/IRequestSaveProduct';
-import { Products } from '@modules/typeorm/entities/Products';
-import { getConnectionOptions, getCustomRepository } from 'typeorm';
-import { ProductRespository } from '@modules/typeorm/repositories/ProductRespository';
+import { getConnection, getCustomRepository } from 'typeorm';
+import { IRequestSaveProduct } from '@repositories/product/IRequestSaveProduct';
+import { AppError } from '@errors/AppError';
+import { Products } from '@entities/Products';
+import { ProductRespository } from '@repositories/product/ProductRespository';
 
 export class ProductService {
   constructor() {}

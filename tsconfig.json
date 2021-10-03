@@ -14,8 +14,7 @@
     /* Language and Environment */
     "target": "es5",                                     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "lib": [
-      "es6",
-      "dom"
+      "es6"
     ],                                      /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
      "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */
@@ -34,8 +33,12 @@
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "@config/*": ["src/config/*"],
-      "@modules/*": ["src/modules/*"],
-      "@shared/*": ["src/shared/*"]
+      "@controller/*": ["src/controller/*"],
+      "@entities/*": ["src/entities/*"],
+      "@errors/*": ["src/errors/*"],
+      "@repositories/*": ["src/repositories/*"],
+      "@routes/*": ["src/routes/*"],
+      "@services/*": ["src/services/*"]
     },                                   /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */

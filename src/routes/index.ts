@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { ProductController } from '@modules/typeorm/controller/ProductController';
+import { ProductController } from '@controller/ProductController';
+
 const productController = new ProductController();
 
 const routes = Router();
@@ -13,6 +14,7 @@ routes.get('/api-vendas/healthCheck', (req, res) => {
 routes.get('/api-vendas/product/:name', (req: Request, res: Response) => {
   productController.findByName(req, res);
 });
+
 routes.post('/api-vendas/product', (req: Request, res: Response) => {
   productController.saveProduct(req, res);
 });

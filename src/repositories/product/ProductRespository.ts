@@ -1,7 +1,7 @@
 import { EntityRepository, Repository } from 'typeorm';
-import { Products } from '../entities/Products';
-import { IRequestSaveProduct } from '@modules/interfaces/IRequestSaveProduct';
-import { AppError } from '@shared/errors/AppError';
+import { AppError } from '@errors/AppError';
+import { IRequestSaveProduct } from './IRequestSaveProduct';
+import { Products } from '@entities/Products';
 
 @EntityRepository(Products)
 export class ProductRespository extends Repository<Products> {
