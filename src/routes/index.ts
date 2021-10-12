@@ -6,17 +6,34 @@ const productController = new ProductController();
 const routes = Router();
 
 //healthCheck
-routes.get('/api-vendas/healthCheck', (req, res) => {
-  res.send('healthCheck is running');
+routes.get('/product-service/healthCheck', async (req, res) => {
+  await res.send('healthCheck is running');
 });
 
 //PRODUCT
-routes.get('/api-vendas/product/:name', (req: Request, res: Response) => {
-  productController.findByName(req, res);
+routes.get(
+  '/product-service/product/:name',
+  async (req: Request, res: Response) => {
+    await productController.findByName(req, res);
+  },
+);
+
+routes.post('/product-service/product', async (req: Request, res: Response) => {
+  await productController.saveProduct(req, res);
 });
 
-routes.post('/api-vendas/product', (req: Request, res: Response) => {
-  productController.saveProduct(req, res);
-});
+routes.put(
+  '/product-service/:productUuid/product',
+  async (req: Request, res: Response) => {
+    await productController.updateProduct(req, res);
+  },
+);
+
+routes.delete(
+  '/product-service/:productUuid/product',
+  async (req: Request, res: Response) => {
+    await productController.deleteProduct(req, res);
+  },
+);
 
 export default routes;

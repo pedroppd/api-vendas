@@ -4,10 +4,11 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
+  DeleteDateColumn,
 } from 'typeorm';
 
 @Entity('products')
-export class Products {
+export class Product {
   @PrimaryGeneratedColumn('uuid')
   uuid: string;
 
@@ -28,4 +29,7 @@ export class Products {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 }
